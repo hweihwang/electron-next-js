@@ -21,7 +21,9 @@ module.exports = {
       repository: {
         owner: 'hweihwang',
         name: 'electron-next-js'
-      }
+      },
+      draft: false,
+      prerelease: false
     }
   }]
 }
