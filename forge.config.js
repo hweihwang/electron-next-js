@@ -9,11 +9,8 @@ module.exports = {
     ]
   },
   makers: [{
-    name: '@electron-forge/maker-dmg',
-    platforms: ['darwin'],
-    config: {
-      format: 'ULFO'
-    }
+    name: '@electron-forge/maker-zip',
+    platforms: ['darwin']
   }],
   publishers: [{
     name: '@electron-forge/publisher-github',
