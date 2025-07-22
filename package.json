@@ -1,17 +1,24 @@
 {
-  "name": "electron-shit",
-  "productName": "electron-shit",
+  "name": "todo-app",
+  "productName": "Todo App",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A modern todo application",
   "main": "dist/main.js",
+  "homepage": "https://github.com/yourusername/todo-app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/todo-app.git"
+  },
   "scripts": {
     "dev": "concurrently \"npm run dev:next\" \"npm run dev:electron\"",
     "dev:next": "next dev src/renderer -p 3000 --turbo",
     "dev:electron": "nodemon --watch src/main.ts src/preload.ts --ext ts --exec \"npm run build:main > /dev/null 2>&1 && NODE_ENV=development electron dist/main.js\"",
-    "build": "npm run build:main && npm run build:next",
+    "build": "npm run build:main && npm run build:styles && npm run build:next",
     "build:next": "next build src/renderer",
     "build:main": "tsc --build tsconfig.main.json",
-    "make": "npm run build && electron-forge make"
+    "build:styles": "npx tailwindcss -i src/renderer/app/globals.css -o dist/styles.css --content './src/renderer/**/*.{js,ts,jsx,tsx}'",
+    "make": "npm run build && electron-forge make",
+    "publish": "npm run build && electron-forge publish"
   },
   "keywords": [],
   "author": {
@@ -23,6 +30,7 @@
     "@prisma/client": "^6.12.0",
     "autoprefixer": "^10.4.21",
     "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.6.2",
     "lucide-react": "^0.525.0",
     "next": "^15.4.2",
     "postcss": "^8.5.6",
@@ -33,7 +41,8 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.8.1",
-    "@electron-forge/maker-zip": "^7.8.1",
+    "@electron-forge/maker-dmg": "^7.8.1",
+    "@electron-forge/publisher-github": "^7.8.1",
     "@types/node": "^24.0.15",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

@@ -1,4 +1,5 @@
-import './globals.css'
+// Import the pre-built styles
+import '../../../dist/styles.css'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

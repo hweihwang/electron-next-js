@@ -24,10 +24,11 @@
     ]
   },
   "include": [
-    "next-env.d.ts",
-    "../../dist/renderer/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "../../dist/renderer/types/**/*.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
