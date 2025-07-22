@@ -19,8 +19,8 @@ module.exports = {
     name: '@electron-forge/publisher-github',
     config: {
       repository: {
-        owner: 'yourusername',
-        name: 'todo-app'
+        owner: 'hweihwang',
+        name: 'electron-next-js'
       }
     }
   }]

@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "description": "A modern todo application",
   "main": "dist/main.js",
-  "homepage": "https://github.com/yourusername/todo-app",
+  "homepage": "https://github.com/hweihwang/electron-next-js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/todo-app.git"
+    "url": "https://github.com/hweihwang/electron-next-js.git"
   },
   "scripts": {
     "dev": "concurrently \"npm run dev:next\" \"npm run dev:electron\"",
